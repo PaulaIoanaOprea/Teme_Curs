@@ -13,8 +13,10 @@ class Cont:
 
     def debitare_cont(self, suma_solicitata):
         sold_ramas = self.sold - suma_solicitata
-        return sold_ramas
+        self.sold = sold_ramas
+        return self.sold
 
     def creditare_cont(self, imprumut):
         sold_disponibil = self.sold + imprumut
-        return sold_disponibil
+        self.sold = sold_disponibil
+        return self.sold

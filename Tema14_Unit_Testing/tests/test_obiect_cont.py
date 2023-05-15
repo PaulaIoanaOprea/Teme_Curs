@@ -16,10 +16,10 @@ class TestCont(unittest.TestCase):
         self.assertEquals(self.cont.iban == 'EU458964123', self.cont.titular_cont == 'Oprea Paula Ioana',
                           self.cont.sold == 6000)
 
-    def test_debitare_sold(self): #pica
+    def test_debitare_sold(self):
         self.cont.debitare_cont(1500)
-        assert self.cont.sold() == 4500
+        assert self.cont.sold == 4500
 
-    def test_creditare_cont(self): #pica
+    def test_creditare_cont(self):
         self.cont.creditare_cont(2000)
-        self.assertTrue(self.cont.sold() == 6500)
+        self.assertTrue(self.cont.sold == 8000)
